@@ -11,16 +11,61 @@
 
 <div id="component"></div>
 
+<!--<script type="text/jsx">-->
+<!--var MyComponent = React.createClass({-->
+<!--render: function(){-->
+<!--return(-->
+<!--<h2>How about coffee?</h2>-->
+<!--);-->
+<!--}-->
+<!--});-->
+<!--React.render(<MyComponent/>, document.getElementById("component"));-->
+<!--</script>-->
+
+<!--<script type="text/jsx">-->
+
+    <!--/*  ===========create properties=============*/-->
+
+    <!--var Mycomponent = React.createClass({-->
+
+        <!--render: function () {-->
+            <!--return (-->
+                    <!--<h1>{this.props.user} like to ride {this.props.vehicle}</h1>-->
+            <!--)-->
+        <!--}-->
+    <!--});-->
+    <!--React.render(-->
+            <!--<div>-->
+                <!--<Mycomponent user="Vasya" vehicle="snowboard"/>-->
+                <!--<Mycomponent user="Petya" vehicle="bike"/>-->
+                <!--<Mycomponent user="Kindrat" vehicle="skis"/>-->
+            <!--</div>,-->
+            <!--document.getElementById("component"));-->
+<!--</script>-->
+
 <script type="text/jsx">
+
+    /*  ===========CREATE CHILDREN=============*/
+
     var MyComponent = React.createClass({
-        render: function(){
-         return(
-                 <h2>How about coffee?</h2>
-         );
+
+        render: function () {
+            return (
+                    <div>
+                        <h3>{this.props.user}</h3>
+                        <p>{this.props.children}</p>
+                    </div>
+            )
         }
     });
-    React.render(<MyComponent/>, document.getElementById("component"));
+    React.render(
+            <div>
+                <MyComponent user="Vasya">the best friend</MyComponent>
+                <MyComponent user="Petya" vehicle="bike">always as drunk as horse</MyComponent>
+            </div>,
+            document.getElementById("component"));
 </script>
+
 
 </body>
 </html>
