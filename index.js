@@ -1,22 +1,24 @@
-/**
- * Created by Horbynko on 22.12.2015.
- */
 /** @jsx React.DOM */
 
-var MyComponent = React.createClass({
-
-        render: function () {
-            return (
-                <div>
-                <h3>{this.props.user}</h3>
-        <p>{this.props.children}</p>
-    </div>
-)
-}
+var Counter = React.createClass({
+    incrementCount: function(){
+        this.setState({
+            count: this.state.count + 1
+        });
+    },
+    getInitialState: function(){
+        return {
+            count: 0
+        }
+    },
+    render: function(){
+        return (
+            <div className="counter">
+                <h1>{this.state.count}</h1>
+                <button type="button" onClick={this.incrementCount}>Increment</button>
+            </div>
+        );
+    }
 });
-React.render(
-<div>
-<MyComponent user="Vasya">the best friend</MyComponent>
-<MyComponent user="Petya" vehicle="bike">always as drunk as horse</MyComponent>
-    </div>,
-    document.getElementById("component"));
+
+React.render(<Counter/>, document.getElementById('App'));
