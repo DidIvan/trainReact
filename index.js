@@ -21,4 +21,4 @@ var Counter = React.createClass({
     }
 });
 
-React.render(<Counter/>, document.getElementById('App'));
+React.render(<Counter/>, document.getElementById('Button1'));
